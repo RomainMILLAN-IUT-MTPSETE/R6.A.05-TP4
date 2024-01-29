@@ -1,10 +1,10 @@
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers.shouldBe
 
-import TP1Ex1.*, TP1Ex2.*, TP1Ex3.*
+import TP4Ex1.*, TP4Ex2.*, TP4Ex3.*
 import scala.math.BigInt
 
-class TestsTP1 extends AnyFlatSpec {
+class TestsTP4 extends AnyFlatSpec {
 
   "ListQueue" should "be defined" in {
     val q1 = new ListQueue[Int]().enqueue(1).enqueue(2).enqueue(3)

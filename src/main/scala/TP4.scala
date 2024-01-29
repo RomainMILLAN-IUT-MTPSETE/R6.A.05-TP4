@@ -1,6 +1,6 @@
 import scala.math
 
-object TP1Ex1:
+object TP4Ex1:
 
   /* Ce trait définit le type de données abstrait d'une queue (first-in-first-out) */
   trait Queue[A]:
@@ -40,7 +40,7 @@ object TP1Ex1:
 
     override def isEmpty(): Boolean = ???
 
-object TP1Ex2:
+object TP4Ex2:
 
   /* Ce trait définit le type de données abstrait d'un ensemble. */
   trait Set[A]:
@@ -88,7 +88,7 @@ object TP1Ex2:
     override def remove(a: A): Set[A] = ???
 
 
-object TP1Ex3:
+object TP4Ex3:
 
   /* Définissez la classe Fraction qui implémente Ordered. */
   class Fraction(val num: Int, val denum: Int) extends Ordered[Fraction]:
