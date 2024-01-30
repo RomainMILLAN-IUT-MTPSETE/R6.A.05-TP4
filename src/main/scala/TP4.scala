@@ -141,7 +141,7 @@ object TP4Ex3:
 
     override def toLong(x: Fraction): Long = ???
 
-  enum FractionalExpression[T]:
+  enum FractionalFunction[T]:
     case Const(v: T)
     case Plus(f1: FractionalFunction[T], f2: FractionalFunction[T])
 
