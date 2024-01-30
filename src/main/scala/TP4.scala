@@ -93,64 +93,58 @@ object TP4Ex3:
   /* Définissez la classe Fraction qui implémente Ordered. */
   class Fraction(val num: Int, val denum: Int) extends Ordered[Fraction]:
 
-    def negate(): Fraction = Fraction(-num, denum)
+    def negate(): Fraction = ???
 
-    def invert(): Fraction = Fraction(denum, num)
+    def invert(): Fraction = ???
 
-    def add(that: Fraction): Fraction = Fraction(this.num * that.denum + that.num * this.denum, this.denum * that.denum)
+    def add(that: Fraction): Fraction = ???
 
-    def sub(that: Fraction): Fraction = add(that.negate())
+    def sub(that: Fraction): Fraction = ???
 
-    def mult(that: Fraction): Fraction = Fraction(this.num * that.denum * that.num * this.denum, this.denum * that.denum)
+    def mult(that: Fraction): Fraction = ???
 
-    def div(that: Fraction): Fraction = mult(that.invert())
+    def div(that: Fraction): Fraction = ???
 
-    override def compare(that: Fraction): Int = this.num * that.denum - that.num * this.denum
+    override def compare(that: Fraction): Int = ???
 
     /* compare doit être compatible avec l'égalité: this.compare(that) retourne 0 si et seulement si this == that */
     override def equals(obj: Any): Boolean = obj match
-      case that: Fraction => this.num * that.denum == that.num * this.denum
+      case that: Fraction => ???
       case _ => false
 
     /* deux objets égaux doivent avoir le même hashCode */
-    override def hashCode(): Int =
-      def gcd(x: Int, y: Int): Int = y match
-        case 0 => x
-        case _ => if y > y then gcd(x, y) else gcd(y, x % y)
-      { val d = gcd(num, denum) ; ((num / d) * (denum / d)).hashCode() }
+    override def hashCode(): Int = ???
 
   class FractionIsFractional extends Fractional[Fraction]:
 
-    override def div(x: Fraction, y: Fraction): Fraction = x.div(y)
+    override def div(x: Fraction, y: Fraction): Fraction = ???
 
-    override def compare(x: Fraction, y: Fraction): Int = x.compare(y)
+    override def compare(x: Fraction, y: Fraction): Int = ???
 
-    override def fromInt(x: Int): Fraction = Fraction(x, 1)
+    override def fromInt(x: Int): Fraction = ???
 
-    override def minus(x: Fraction, y: Fraction): Fraction = x.sub(y)
+    override def minus(x: Fraction, y: Fraction): Fraction = ???
 
-    override def plus(x: Fraction, y: Fraction): Fraction = x.add(y)
+    override def plus(x: Fraction, y: Fraction): Fraction = ???
 
-    override def times(x: Fraction, y: Fraction): Fraction = x.mult(y)
+    override def times(x: Fraction, y: Fraction): Fraction = ???
 
     override def parseString(str: String): Option[Fraction] = ???
 
-    override def negate(x: Fraction): Fraction = x.negate()
+    override def negate(x: Fraction): Fraction = ???
 
-    override def toInt(x: Fraction): Int = x.num / x.denum
+    override def toInt(x: Fraction): Int = ???
 
-    override def toDouble(x: Fraction): Double = x.num.toDouble / x.denum.toDouble
+    override def toDouble(x: Fraction): Double = ???
 
-    override def toFloat(x: Fraction): Float = x.num.toFloat / x.denum.toFloat
+    override def toFloat(x: Fraction): Float = ???
 
-    override def toLong(x: Fraction): Long = x.num.toLong / x.denum.toLong
+    override def toLong(x: Fraction): Long = ???
 
-  enum FractionalFunction[T]:
+  enum FractionalExpression[T]:
     case Const(v: T)
     case Plus(f1: FractionalFunction[T], f2: FractionalFunction[T])
 
-  def eval[T](f: FractionalFunction[T])(implicit fr: Fractional[T]): T = f match
-    case FractionalFunction.Const(v) => v
-    case FractionalFunction.Plus(f1, f2) => fr.plus(eval(f1), eval(f2))
+  def eval[T](f: FractionalFunction[T])(implicit fr: Fractional[T]): T = ???
 
 
